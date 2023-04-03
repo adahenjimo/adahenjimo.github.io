@@ -124,7 +124,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -154,6 +154,75 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://dandanking.github.io/post/8ab2dce2.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="蛋挞一号">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蛋挞王国">
+      <meta itemprop="description" content="记录 / 阅读 / 旅行">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蛋挞王国">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/post/8ab2dce2.html" class="post-title-link" itemprop="url">test1</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-04-04 00:49:54 / 修改时间：00:58:41" itemprop="dateCreated datePublished" datetime="2023-04-04T00:49:54+08:00">2023-04-04</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -260,9 +329,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-04-03 10:08:35 / 修改时间：10:32:26" itemprop="dateCreated datePublished" datetime="2023-04-03T10:08:35+08:00">2023-04-03</time>
+      <time title="创建时间：2023-04-03 10:08:35" itemprop="dateCreated datePublished" datetime="2023-04-03T10:08:35+08:00">2023-04-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-04-04 01:07:05" itemprop="dateModified" datetime="2023-04-04T01:07:05+08:00">2023-04-04</time>
     </span>
 
   
@@ -276,335 +351,14 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>关于C++的一些基础语法，C++11特性以及STL下常见容器底层数据结构</p>
-<h2 id="C-中struct和class的区别"><a href="#C-中struct和class的区别" class="headerlink" title="C++中struct和class的区别"></a>C++中struct和class的区别</h2><p>在C++中，struct和class都可以用于定义自定义数据类型，它们的基本语法和用途非常相似。但是，它们之间存在一些细微的区别：</p>
-<h3 id="默认访问控制权限"><a href="#默认访问控制权限" class="headerlink" title="默认访问控制权限"></a>默认访问控制权限</h3><p>在struct中，默认的成员访问控制权限为public，而在class中，默认的成员访问控制权限为private。这意味着在struct中定义的成员变量和成员函数可以在外部访问，而在class中定义的成员变量和成员函数默认情况下无法在外部访问。</p>
-<h3 id="继承方式"><a href="#继承方式" class="headerlink" title="继承方式"></a>继承方式</h3><p>在继承方面，使用struct定义的类默认为public继承，而使用class定义的类默认为private继承。这意味着在struct中定义的类可以在其派生类中继承公共和保护成员，而在class中定义的类只能在其派生类中继承保护和私有成员。</p>
-<h3 id="成员变量初始化"><a href="#成员变量初始化" class="headerlink" title="成员变量初始化"></a>成员变量初始化</h3><p>在struct中，可以使用默认成员初始化器来初始化成员变量。而在class中，需要使用构造函数来初始化成员变量。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">MyStruct</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> x = <span class="number">0</span>;    <span class="comment">// 使用默认成员初始化器初始化变量</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">MyClass</span>() : <span class="built_in">x</span>(<span class="number">0</span>) &#123;&#125;   <span class="comment">// 使用构造函数初始化变量</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="类型别名"><a href="#类型别名" class="headerlink" title="类型别名"></a>类型别名</h3><p>在C++11标准中，struct和class还有一个区别是，struct可以使用using关键字定义类型别名，而class则不能。这意味着可以使用struct定义简单的类型别名，例如：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">MyStruct</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">using</span> ValueType = <span class="type">int</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">MyStruct::ValueType x = <span class="number">42</span>;</span><br></pre></td></tr></table></figure>
-
-<p>总之，struct和class在语法和用途上非常相似，但它们之间的主要区别在于默认的访问控制权限、继承方式、成员变量初始化方式以及是否允许定义类型别名。</p>
-<h2 id="volatile-static-const-extern-void等关键字"><a href="#volatile-static-const-extern-void等关键字" class="headerlink" title="volatile, static, const, extern, void等关键字"></a>volatile, static, const, extern, void等关键字</h2><h3 id="volatile"><a href="#volatile" class="headerlink" title="volatile"></a>volatile</h3><p>在C++中，volatile是一种关键字，用于告诉编译器，变量的值可能会在程序的其他部分被修改，因此编译器不应该对该变量进行一些优化。<br>具体来说，使用volatile关键字可以做以下几件事情：</p>
-<h4 id="禁止编译器优化"><a href="#禁止编译器优化" class="headerlink" title="禁止编译器优化"></a>禁止编译器优化</h4><p>volatile关键字可以告诉编译器，变量的值可能会在程序的其他部分被修改，因此编译器不应该对该变量进行一些优化，例如缓存变量的值或者将变量存储在寄存器中。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">volatile</span> <span class="type">int</span> x = <span class="number">42</span>;</span><br><span class="line"><span class="type">int</span> y = x + <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
-<p>使用volatile关键字声明的变量x，可能在程序的其他部分被修改，因此编译器不会将x的值存储在寄存器中，而是每次都会从内存中读取x的值。因此，在计算y的值时，x的最新值会被使用。</p>
-<h4 id="保证读写操作的顺序"><a href="#保证读写操作的顺序" class="headerlink" title="保证读写操作的顺序"></a>保证读写操作的顺序</h4><p>在多线程编程中，使用volatile关键字可以保证变量的读写操作的顺序。具体来说，如果一个线程写入了一个volatile变量的值，然后另一个线程读取了该变量的值，那么这个读操作会发生在写操作之后。这是因为，volatile关键字可以保证变量的读写操作不会被重排序。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">volatile</span> <span class="type">int</span> x = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 线程1</span></span><br><span class="line">x = <span class="number">42</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 线程2</span></span><br><span class="line"><span class="type">int</span> y = x;</span><br></pre></td></tr></table></figure>
-
-<p>使用volatile关键字声明的变量x，可以保证线程2读取x的值发生在线程1将x赋值为42之后。</p>
-<p>需要注意的是，volatile关键字并不能保证线程安全，如果需要进行线程同步，还需要使用其他的同步机制。</p>
-<p>总之，volatile关键字用于告诉编译器变量的值可能会在程序的其他部分被修改，以及保证变量的读写操作的顺序。在多线程编程中，volatile关键字可以用于确保变量的读写操作的顺序。</p>
-<h3 id="static"><a href="#static" class="headerlink" title="static"></a>static</h3><h4 id="静态局部变量"><a href="#静态局部变量" class="headerlink" title="静态局部变量"></a>静态局部变量</h4><p>当static关键字用于函数内部的变量时，它将使该变量成为静态局部变量。这意味着该变量在函数调用结束后并不会被销毁，而是一直存在于内存中，直到程序结束。该变量的作用域仅限于该函数内部，但是该变量的值在不同的函数调用之间保持不变。</p>
-<p>当程序想要使用全局变量的时候应该先考虑使用static（数据安全性）</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">foo</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> count = <span class="number">0</span>;  <span class="comment">// 静态局部变量</span></span><br><span class="line">    count++;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;foo has been called &quot;</span> &lt;&lt; count &lt;&lt; <span class="string">&quot; times.\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">foo</span>();  <span class="comment">// 输出 &quot;foo has been called 1 times.&quot;</span></span><br><span class="line">    <span class="built_in">foo</span>();  <span class="comment">// 输出 &quot;foo has been called 2 times.&quot;</span></span><br><span class="line">    <span class="built_in">foo</span>();  <span class="comment">// 输出 &quot;foo has been called 3 times.&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在上面的例子中，count变量被定义为静态局部变量，每次调用foo函数时，该变量的值将自增并输出调用次数。</p>
-<h4 id="静态全局变量"><a href="#静态全局变量" class="headerlink" title="静态全局变量"></a>静态全局变量</h4><p>当static关键字用于全局变量时，它将使该变量成为静态全局变量。这意味着该变量仅在定义它的文件中可见，无法在其他文件中访问。与普通的全局变量不同，静态全局变量的生命周期与程序的生命周期相同，即使它在定义它的函数之外定义，也只能在该文件中使用。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// file1.cpp</span></span><br><span class="line"><span class="type">static</span> <span class="type">int</span> count = <span class="number">0</span>;  <span class="comment">// 静态全局变量</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">foo</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    count++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// file2.cpp</span></span><br><span class="line"><span class="keyword">extern</span> <span class="type">int</span> count;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">foo</span>();</span><br><span class="line">    <span class="built_in">foo</span>();</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;count is &quot;</span> &lt;&lt; count &lt;&lt; <span class="string">&quot;\n&quot;</span>;  <span class="comment">// 编译错误：count未定义</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在上面的例子中，count变量被定义为静态全局变量，只能在file1.cpp文件中使用。在file2.cpp文件中，如果尝试访问该变量，将会导致编译错误。</p>
-<h4 id="静态成员变量和函数"><a href="#静态成员变量和函数" class="headerlink" title="静态成员变量和函数"></a>静态成员变量和函数</h4><p>当static关键字用于类的成员变量或函数时，它将使该成员变量或函数成为静态成员变量或函数。静态成员变量和函数属于类本身，而不是类的实例。这意味着它们可以在不创建类的实例的情况下访问，也可以在类的任何实例之间共享。</p>
-<p><strong>私有静态成员在类外无法访问</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> count;  <span class="comment">// 静态成员变量</span></span><br><span class="line">    <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">incrementCount</span><span class="params">()</span>  <span class="comment">// 静态成员函数</span></span></span><br><span class="line"><span class="function">~~~~</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">##<span class="meta"># const</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">在C++中，<span class="type">const</span>是一种关键字，用于指定变量或函数参数的值不能被修改。使用<span class="type">const</span>关键字可以带来以下几个好处：</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">#### 防止意外修改变量的值</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">使用<span class="type">const</span>关键字可以告诉编译器，变量的值不能被修改，这可以防止在程序中意外修改变量的值。</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">#### 允许编译器进行优化</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">使用<span class="type">const</span>关键字可以告诉编译器，变量的值不会被修改，这可以让编译器进行更多的优化。例如，编译器可以在代码中直接使用变量的值，而不必每次都从内存中读取变量的值。</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">#### 保证函数参数的不可变性</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">在函数参数列表中使用<span class="type">const</span>关键字可以告诉编译器，函数不会修改这些参数的值。这可以让编译器进行更多的优化，同时也可以提高代码的可读性和可维护性。</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">#### 用法介绍</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">- 常量变量</span></span><br><span class="line"><span class="function">- 常量指针</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">~~~C++</span></span><br><span class="line"><span class="function"><span class="type">int</span> x </span>= <span class="number">10</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span>* p = &amp;x;</span><br></pre></td></tr></table></figure>
-
-<p>在程序中，p是一个指向const int类型的指针，即p所指向的值不能被修改，但p本身可以指向其他const int类型的变量。（不能通过解引用的方法修改内存地址中的值，用原始的变量名是可以修改的）</p>
-<p>一般用于修饰函数的形参，表示不希望在函数里修改内存地址中的值</p>
-<ul>
-<li>指针常量</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span>* <span class="type">const</span> p = &amp;x;</span><br></pre></td></tr></table></figure>
-
-<p>在程序中，p是一个指向int类型的指针常量，即p指向的值可以被修改，但p本身不能指向其他变量。</p>
-<ul>
-<li>常量指针常量</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x = <span class="number">10</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span>* <span class="type">const</span> p = &amp;x;</span><br></pre></td></tr></table></figure>
-
-<p>指向的变量（对象）不可改变，不能通过解引用的方法修改内存地址中的值</p>
-<ul>
-<li>常量引用</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x = <span class="number">10</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span>&amp; r = x;</span><br></pre></td></tr></table></figure>
-
-<p>在程序中，r是一个指向const int类型的引用，即r所引用的值不能被修改。</p>
-<ul>
-<li>引用的形参和const<br>如果引用的数据对象类型不匹配，当引用为const时，C++将创建临时变量，让引用指向临时变量</li>
-</ul>
-<p>如果函数的实参不是左值或与const引用形参的类型不匹配，那么C++将创建正确类型的匿名变量，将实参的值传递给匿名变量，并让形参来引用该变量。</p>
-<ul>
-<li>const 修饰成员函数<br>在类的成员函数后面加const关键字，表示在成员函数中保证不会修改调用对象的成员变量</li>
-</ul>
-<p>mutable会突破const限制，被mutable修饰的成员变量，将永远处于可变状态</p>
-<h3 id="extern"><a href="#extern" class="headerlink" title="extern"></a>extern</h3><p>用于指定变量或函数的外部链接（external linkage），即在其他文件中定义或声明的变量或函数。</p>
-<h3 id="void"><a href="#void" class="headerlink" title="void"></a>void</h3><p>表示无类型，主要有三个用途：</p>
-<ul>
-<li>函数的返回值用void，表示函数没有返回值。</li>
-<li>函数的参数填void，表示函数不需要参数（或参数列表直接空着）</li>
-<li>函数的形参用void*，表示接受任意数据类型的指针</li>
-</ul>
-<p>注意：</p>
-<ul>
-<li>不能用Void声明变量，它不能代表一个真实的变量，但是，用void*可以</li>
-<li>不能对void<em>指针直接解引用（在C++中，解引用操作符（</em>）用于获取指针所指向的对象或变量的值），需要转换为其他类型指针</li>
-<li>其他类型的指针赋值给void*指针不需要转换</li>
-<li>把void*指针赋值给其他类型的指针需要转换</li>
-</ul>
-<h3 id="explicit"><a href="#explicit" class="headerlink" title="explicit"></a>explicit</h3><p>C++支持对象自动转换，但是，自动类型转换可能导致意外。为了解决这种问题，C++11引入了explicit 关键字，用于关闭自动转换的特性</p>
-<h2 id="C-11新特性"><a href="#C-11新特性" class="headerlink" title="C++11新特性"></a>C++11新特性</h2><h3 id="nullptr替代NULL"><a href="#nullptr替代NULL" class="headerlink" title="nullptr替代NULL"></a>nullptr替代NULL</h3><p>空指针是不会指向有效数据的指针。以前，C&#x2F;C++用0表示空指针，这带来了一些问题，这样的话0既可以表示指针常量，又可以表示整型常量。</p>
-<p>C++11 新增了关键字 nullptr，用于表示空指针:它是指针类型，不是整型类型</p>
-<p>为了向后兼容，C++11 仍允许用0来表示空指针，因此表达式 nullptr&#x3D;&#x3D; 0为 true。</p>
-<p>使用 nullptr 提供了更高的类型安全。例如，可以将0传递给形参为 int 的函数，但是，如果将 nullptr 传递给这样的函数，编译器将视为错误。<br>因此，出于清晰和安全考虑，请使用 nullptr。</p>
-<h3 id="引入了auto和decltype这两个关键字实现了类型推导"><a href="#引入了auto和decltype这两个关键字实现了类型推导" class="headerlink" title="引入了auto和decltype这两个关键字实现了类型推导"></a>引入了auto和decltype这两个关键字实现了类型推导</h3><h4 id="auto"><a href="#auto" class="headerlink" title="auto"></a>auto</h4><p>在C++11 中，赋予了 auto 全新的合义，不再用于修饰变量，而是作为一个类型指示符，指示编译器在编译时推导 auto 声明的变量的数据类型</p>
-<p>语法:auto 变量名 &#x3D; 初始值</p>
-<p>在 Linux 平台下，编译需要加-std&#x3D;c++11 参数</p>
-<p>注意:</p>
-<ul>
-<li>auto 声明的变量必须在定义时初始化</li>
-<li>初始化的右值可以是具体的数值，也可以是表达式和函数的返回值等</li>
-<li>auto 不能作为函数的形参类型</li>
-<li>auto 不能直接声明数组。</li>
-<li>auto 不能定义类的非静态成员变量</li>
-</ul>
-<p>不要滥用 auto，auto 在编程时真正的用途如下:</p>
-<ul>
-<li>代替冗长复杂的变量声明</li>
-<li>在模板中，用于声明依赖模板参数的变量</li>
-<li>函数模板依赖模板参数的返回值</li>
-<li>用于lambda 表达式中</li>
-</ul>
-<h4 id="decltype"><a href="#decltype" class="headerlink" title="decltype"></a>decltype</h4><p>若只希望从表达式中推断出要定义变量的类型，但却不想用表达式的值去初始化变量。还有可能是函数的返回类型为某表达式的值类型。在这些时候auto显得就无力了，所以C++11又引入了第二种类型说明符decltype</p>
-<p>在 C++11中，decltype 操作符，用于查询表达式的数据类型</p>
-<p>语法: decltype(expression) var;</p>
-<p>decltype 分析表达式并得到它的类型，不会计算执行表达式。函数调用也一种表达式，因此不必担心在使用 decltype 时执行了函数</p>
-<p>decltype 推导规则(按步骤)：<br>1)如果 expression 是一个没有用括号括起来的标识符，则 var 的类型与该标识符的类型相同，包括const 等限定符。<br>2)如果 expression 是一个函数调用，则 var 的类型与函数的返回值类型相同(函数不能返回 void但可以返回 void *)<br>3)如果 expression 是一个左值(能取地址)(要排除第一种情况)、或者用括号括起来的标识符，那么 var 的类型是 expression 的引用.<br>4)如果上面的条件都不满足，则 var 的类型与 expression 的类型相同</p>
-<p>如果需要多次使用 decltype，可以结合 typedef和 using.</p>
-<h3 id="智能指针的原理、常用的智能指针及实现"><a href="#智能指针的原理、常用的智能指针及实现" class="headerlink" title="智能指针的原理、常用的智能指针及实现"></a>智能指针的原理、常用的智能指针及实现</h3><h4 id="unique-ptr"><a href="#unique-ptr" class="headerlink" title="unique_ptr"></a>unique_ptr</h4><p>unique_ptr采用的是独享所有权语义，一个非空的unique_ptr总是拥有它所指向的资源。转移一个unique_ptr将会把所有权全部从源指针转移给目标指针，源指针被置空；所以unique_ptr不支持普通的拷贝和赋值操作，不能用在STL标准容器中；局部变量的返回值除外（因为编译器知道要返回的对象将要被销毁）；如果你拷贝一个unique_ptr，那么拷贝结束后，这两个unique_ptr都会指向相同的资源，造成在结束时对同一内存指针多次释放而导致程序崩溃。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//包含头文件: </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;memory&gt;</span></span></span><br><span class="line"><span class="comment">//方法一:</span></span><br><span class="line"><span class="function">unique_ptr&lt;AA&gt; <span class="title">p0</span><span class="params">(<span class="keyword">new</span> AA(<span class="string">&quot;你好&quot;</span>))</span></span>; <span class="comment">// 分配内存并初始化。</span></span><br><span class="line"><span class="comment">//方法二</span></span><br><span class="line">unique_ptr&lt;AA&gt; pO = <span class="built_in">make_unique</span>&lt;AA&gt;(<span class="string">&quot;你好&quot;</span>);<span class="comment">// C++14 标准,</span></span><br><span class="line">unique_ptr&lt;<span class="type">int</span>&gt; pp1=<span class="built_in">make_unique</span>&lt;<span class="type">int</span>&gt;();; <span class="comment">// 数据类型为 int。</span></span><br><span class="line">unique_ptr&lt;AA&gt; pp2 = <span class="built_in">make_unique</span>&lt;AA&gt;();<span class="comment">// 数据类型为 AA，默认构造函数</span></span><br><span class="line">unique_ptr&lt;AA&gt; pp3 = <span class="built_in">make_unique</span>&lt;AA&gt;(<span class="string">&quot;你好&quot;</span>); <span class="comment">// 数据类型为 AA,一个参数的构造函数</span></span><br><span class="line">unique_ptr&lt;AA&gt; pp4 = <span class="built_in">make_unique</span>&lt;AA&gt;(<span class="string">&quot;你好”,8); // 数据类型为 AA,两个参数的构造函数.</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="shared-ptr"><a href="#shared-ptr" class="headerlink" title="shared_ptr"></a>shared_ptr</h4><p>shared_ptr共享它指向的对象，多个 shared_ptr 可以指向(关联)相同的对象，在内部采用计数机制来实现。</p>
-<p>当新的 shared_ptr 与对象关联时，引用计数增加 1。当shared_ptr 超出作用域时，引用计数减 1。当引用计数变为 0时，则表示没有任何shared_ptr与对象关联，则释放该对象。</p>
-<h4 id="weak-ptr"><a href="#weak-ptr" class="headerlink" title="weak_ptr"></a>weak_ptr</h4><p>引用计数有一个问题就是互相引用形成环（环形引用），这样两个指针指向的内存都无法释放。需要使用weak_ptr打破环形引用。weak_ptr是一个弱引用，它是为了配合shared_ptr而引入的一种智能指针，它指向一个由shared_ptr管理的对象而不影响所指对象的生命周期，也就是说，它只引用，不计数。如果一块内存被shared_ptr和weak_ptr同时引用，当所有shared_ptr析构了之后，不管还有没有weak_ptr引用该内存，内存也会被释放。所以weak_ptr不保证它指向的内存一定是有效的，在使用之前使用函数lock()检查weak_ptr是否为空指针。</p>
-<p>weak_ptr 更像是shared_ptr 的助手而不是智能指针</p>
-<p>weak_ptr 不控制对象的生命周期，但是，它知道对象是否还活着。用lock()函数把它可以提升为 shared_ptr，如果对象还活着，返回有效的 shared_ptr，如果对象已经死了，提升会失败，返回一个空的 shared_ptr。提升的行为 (lock()) 是线程安全的。</p>
-<h4 id="auto-ptr"><a href="#auto-ptr" class="headerlink" title="auto_ptr"></a>auto_ptr</h4><p>主要是为了解决“有异常抛出时发生内存泄漏”的问题 。因为发生异常而无法正常释放内存。</p>
-<p>auto_ptr有拷贝语义，拷贝后源对象变得无效，这可能引发很严重的问题；而unique_ptr则无拷贝语义，但提供了移动语义，这样的错误不再可能发生，因为很明显必须使用std::move()进行转移。</p>
-<p>auto_ptr不支持拷贝和赋值操作，不能用在STL标准容器中。STL容器中的元素经常要支持拷贝、赋值操作，在这过程中auto_ptr会传递所有权，所以不能在STL中使用。</p>
-<h3 id="基于范围的for循环for-auto-amp-i-res"><a href="#基于范围的for循环for-auto-amp-i-res" class="headerlink" title="基于范围的for循环for(auto&amp; i : res){}"></a>基于范围的for循环for(auto&amp; i : res){}</h3><p>对于一个有范围的集合来说，在程序代码中指定循环的范围有时候是多余的，还可能犯错误.C++11 中引入了基于范围的for 循环<br>语法:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(选代的变量 : 迭代的范围)&#123;</span><br><span class="line">	循环体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>注意:<br>1)选代的范围可以是数组名、容器名、初始化列表或者可迭代的对象 (支持 begin()、end()、++、&#x3D;&#x3D;)<br>2) 数组名传入函数后，已退化成指针，不能作为容器名.<br>3)如果容器中的元素是结构体和类，迭代器变量应该申明为引用，加 const 约束表示只读<br>4)注意迭代器失效的问题</p>
-<h3 id="类和结构体的中初始化列表"><a href="#类和结构体的中初始化列表" class="headerlink" title="类和结构体的中初始化列表"></a>类和结构体的中初始化列表</h3><p>C++11 丰富了大括号的使用范围，用大括号括起来的列表(统一的初始化列表)可以用于所有内置类型和用户自定义类型。使用统一的初始化列表时，可以添加等号(&#x3D;)，也可以不添加:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x=(<span class="number">5</span>)</span><br><span class="line"><span class="type">double</span> y&#123;<span class="number">12.75</span>&#125;;</span><br><span class="line"><span class="type">short</span> quar[<span class="number">5</span>]&#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">76</span>,<span class="number">1</span>&#125;:</span><br></pre></td></tr></table></figure>
-
-<p>统一的初始化列表也可以用于 new 表达式中</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> *ar=<span class="keyword">new</span> <span class="type">int</span>[<span class="number">4</span>]&#123;<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">7</span>&#125;:</span><br></pre></td></tr></table></figure>
-
-<p>创建对象时，也可以使用大括号 (而不是圆括号) 来调用构造函数:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Girl</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="type">int</span> m bh;</span><br><span class="line">	string m name;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">Girl</span>(<span class="type">int</span> bh,string name) : <span class="function">m <span class="title">bh</span><span class="params">(bh)</span>,<span class="title">m_name</span><span class="params">(name)</span> f</span></span><br></pre></td></tr></table></figure>
-
-<p>STL 容器提供了将 initializer list 模板类作为参数的构造函数:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">v1</span><span class="params">(<span class="number">10</span>)</span></span>; <span class="comment">// 把v1 初始化为 10 个元素。</span></span><br><span class="line">vector&lt;<span class="type">int</span>&gt; v2&#123;<span class="number">10</span>; <span class="comment">// 把v2 初始化为 1个元素，这个元素的值是 10。</span></span><br><span class="line">vector&lt;<span class="type">int</span>&gt; v213,<span class="number">5</span>,<span class="number">8</span>; <span class="comment">// 把v3 初始化为3 个元素，值分别是 3、5、8。</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Lambda表达式（匿名函数）"><a href="#Lambda表达式（匿名函数）" class="headerlink" title="Lambda表达式（匿名函数）"></a>Lambda表达式（匿名函数）</h3><p>利用lambda表达式可以编写内嵌的匿名函数，用以替换独立函数或者函数对象；</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//捕获列表  参数列表   函数选项   返回类型  函数体</span></span><br><span class="line">[capture] （parameters） <span class="keyword">mutable</span> -&gt;<span class="keyword">return</span>-type &#123;statement&#125;;</span><br></pre></td></tr></table></figure>
-
-<h4 id="参数列表"><a href="#参数列表" class="headerlink" title="参数列表"></a>参数列表</h4><p>参数列表是可选的，类似普通函数的参数列表，如果没有参数列表，0可以省略不写</p>
-<p>与普通函数的不同:</p>
-<ul>
-<li>lambda函数不能有默认参数</li>
-<li>所有参数必须有参数名</li>
-<li>不支持可变参数</li>
-</ul>
-<h4 id="返回类型"><a href="#返回类型" class="headerlink" title="返回类型"></a>返回类型</h4><p>用后置的方法书写返回类型，类似于普通函数的返回类型，如果不写返回类型，编译器会根据函数体中的代码推断出来</p>
-<p>如果有返回类型，建议显式的指定，自动推断可能与预期不一致。</p>
-<h4 id="函数体"><a href="#函数体" class="headerlink" title="函数体"></a>函数体</h4><p>类似于普通函数的函数体</p>
-<h4 id="捕获列表"><a href="#捕获列表" class="headerlink" title="捕获列表"></a>捕获列表</h4><p>通过捕获列表，lambda 函数可以访问父作用域中的非静态局部变量 (静态局部变量可以直接访问,不能访问全局变量)。</p>
-<p>捕获列表书写在{}中，与函数参数的传递类似，捕获方式可以是值和引用</p>
-<h5 id="值捕获"><a href="#值捕获" class="headerlink" title="值捕获"></a>值捕获</h5><p>与传递参数类似，采用值捕获的前提是变量可以拷贝</p>
-<p>与传递参数不同，变量的值是在lambda 函数创建时拷贝，而不是调用时拷贝。</p>
-<h5 id="引用捕获"><a href="#引用捕获" class="headerlink" title="引用捕获"></a>引用捕获</h5><p>和函数引用参数一样，引用变量的值在 lambda 函数体中改变时，将影响被引用的对象</p>
-<h5 id="隐式捕获"><a href="#隐式捕获" class="headerlink" title="隐式捕获"></a>隐式捕获</h5><p>除了显式列出我们希望使用的父作域的变量之外，还可以让编译器根据函数体中的代码来推断需要捕获哪些变量，这种方式称之为隐式捕获.</p>
-<p>隐式捕获有两种方式，分别是[&#x3D;]和[&amp;]。[&#x3D;]表示以值捕获的方式捕获外部变量，[&amp;]表示以引用捕获的方式捕获外部变量。</p>
-<h5 id="混合方式捕获"><a href="#混合方式捕获" class="headerlink" title="混合方式捕获"></a>混合方式捕获</h5><p>即同时使用显式捕获和隐式捕获ambda 函数还支持混合方式捕获，<br>混合捕获时，捕获列表中的第一个元素必须是 &#x3D; 或 &amp;，此符号指定了默认捕获的方式是值捕获或引用捕获。<br>需要注意的是:显式捕获的变量必须使用和默认捕获不同的方式捕获。例如:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> i = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> j = <span class="number">20</span>:</span><br><span class="line"><span class="keyword">auto</span> f1 = [ =, &amp;i] () ( <span class="keyword">return</span> j + i; );<span class="comment">//正确，默认值捕获，显式是引用捕获</span></span><br><span class="line"><span class="keyword">auto</span> f2 = [ =, i] () ( <span class="keyword">return</span> i + j; &#125;;<span class="comment">// 编译出错，默认值捕获，显式值捕获，冲突了</span></span><br><span class="line"><span class="keyword">auto</span> f3 = [ &amp;, &amp;<span class="built_in">il</span> () ( <span class="keyword">return</span> i +i; &#125;;<span class="comment">// 编译出错，默认引用捕获，显式引用捕获，冲突了</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="修改值捕获变量的值"><a href="#修改值捕获变量的值" class="headerlink" title="修改值捕获变量的值"></a>修改值捕获变量的值</h5><p>在lambda 函数中，如果以传值方式捕获变量，则函数体中不能修改该变量，否则会引发编译错误</p>
-<p>在lambda 函数中，如果希望修改值捕获变量的值，可以加 mutable 选项，但是，在lambda 函数的外部，变量的值不会被修改</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">123</span></span><br><span class="line"><span class="keyword">auto</span> f = [a]()<span class="keyword">mutable</span> &#123; cout &lt;&lt; ++a &lt;&lt; endl;&#125;; <span class="comment">// 不会报错</span></span><br><span class="line">cout &lt;&lt; a&lt;&lt; endl; <span class="comment">// 输出: 123</span></span><br><span class="line"><span class="built_in">f</span>();  <span class="comment">// 输出: 124</span></span><br><span class="line">cout &lt;&lt; a &lt;&lt; endl; <span class="comment">// 输出: 123</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="异常说明"><a href="#异常说明" class="headerlink" title="异常说明"></a>异常说明</h5><p>lambda 可以抛出异常，用throw(… )指示异常的类型，用 noexcept 指示不抛出任何异常.</p>
-<p><strong>当我们编写了一个lambda 函数之后，编译器将它翻译成一个类，该类中有一个重载了()的函数</strong></p>
-<h3 id="std-forward-list（单向链表）"><a href="#std-forward-list（单向链表）" class="headerlink" title="std::forward_list（单向链表）"></a>std::forward_list（单向链表）</h3><h3 id="右值引用和移动语义"><a href="#右值引用和移动语义" class="headerlink" title="右值引用和移动语义"></a>右值引用和移动语义</h3><h4 id="左值、右值"><a href="#左值、右值" class="headerlink" title="左值、右值"></a>左值、右值</h4><p>在C++中，所有的值不是左值，就是右值，左值是指表达式结束后依然存在的持久化对象，右值是指表达式结束后就不再存在的临时对象，有名字的对象都是左值，右值没有名字</p>
-<p>还有一个可以区分左值和右值的便捷方法: 看能不能对表达式取地址，如果能，则为左值，否则为右</p>
-<p>C++11 扩展了右值的概念，将右值分为了纯右值和将亡值,</p>
-<ul>
-<li>纯右值: a)非引用返回的临时变量，b) 运算表达式产生的结果，c) 字面常量 (C 风格字符串除外，它是地址)。</li>
-<li>将亡值: 与右值引用相关的表达式，例如: 将要被移动的对象、T&amp;&amp;函数返回的值std::move)的返回值、转换成T&amp;&amp;的类型的转换函数的返回值.</li>
-</ul>
-<p>C++98 中的引用很常见，就是给变量取个别名，在C++11 中，因为增加了右值引用(rvalue reference)的概念，所以C++98 中的引用都称为了左值引用(lvalue reference)。</p>
-<p>右值引用就是给右值取个名字</p>
-<p>语法: 数据类型&amp;&amp; 变量名&#x3D;右值</p>
-<h4 id="移动语义"><a href="#移动语义" class="headerlink" title="移动语义"></a>移动语义</h4><p>如果一个对象中有堆区资源，需要编写拷贝构造函数和赋值函数，实现深拷贝。<br>深贝把对象中的堆区资源复制了一份，如果源对象(被拷贝的对象)是临时对象，拷贝完就没什么用了，这样会造成没有意义的资源申请和释放操作。如果能够直接使用源对象拥有的资源，可以节省资源申请和释放的时间。C++11新增加的移动语义就能够做到这一点。<br>实现移动语义要增加两个函数:移动构造函数和移动赋值函数<br>移动构造函数的语法:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">类名(类名&amp;&amp; 源对象)&#123;......&#125;</span><br></pre></td></tr></table></figure>
-
-<p>移动赋值函数的语法</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">类名&amp; <span class="keyword">operator</span>=(类名&amp;&amp; 源对象)&#123;......&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="STL下常见容器底层数据结构"><a href="#STL下常见容器底层数据结构" class="headerlink" title="STL下常见容器底层数据结构"></a>STL下常见容器底层数据结构</h2><h3 id="string"><a href="#string" class="headerlink" title="string"></a>string</h3><p>string 是字符容器，内部维护了一个动态的字符数组</p>
-<p>string 类是 std::basic string 类模板的一个具体化版本的别名</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> std::string=std.:basic string&lt;<span class="type">char</span>, std.:<span class="type">char</span> traits &lt;<span class="type">char</span>&gt;, std.:allocator &lt;<span class="type">char</span>&gt;&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="构造函数和赋值"><a href="#构造函数和赋值" class="headerlink" title="构造函数和赋值"></a>构造函数和赋值</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">std::string str1 = <span class="string">&quot;Hello&quot;</span>; <span class="comment">// 直接初始化</span></span><br><span class="line"><span class="function">std::string <span class="title">str2</span><span class="params">(<span class="string">&quot;world&quot;</span>)</span></span>; <span class="comment">// 使用构造函数初始化</span></span><br><span class="line">std::string str3 = str1 + <span class="string">&quot; &quot;</span> + str2; <span class="comment">// 使用 + 运算符连接两个字符串</span></span><br><span class="line">std::string str4 = str3; <span class="comment">// 使用赋值运算符</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="访问和修改字符串内容"><a href="#访问和修改字符串内容" class="headerlink" title="访问和修改字符串内容"></a>访问和修改字符串内容</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> ch = str3[<span class="number">0</span>]; <span class="comment">// 使用下标访问单个字符</span></span><br><span class="line">str3[<span class="number">0</span>] = <span class="string">&#x27;h&#x27;</span>; <span class="comment">// 修改单个字符</span></span><br><span class="line">std::cout &lt;&lt; str3 &lt;&lt; std::endl; <span class="comment">// 输出字符串</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="操作字符串"><a href="#操作字符串" class="headerlink" title="操作字符串"></a>操作字符串</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> len = str3.<span class="built_in">length</span>(); <span class="comment">// 获取字符串长度</span></span><br><span class="line">str3.<span class="built_in">append</span>(<span class="string">&quot;!!&quot;</span>); <span class="comment">// 在字符串末尾添加字符串或字符</span></span><br><span class="line">str3.<span class="built_in">insert</span>(<span class="number">6</span>, <span class="string">&quot; &quot;</span>); <span class="comment">// 在指定位置插入字符串或字符</span></span><br><span class="line">str3.<span class="built_in">erase</span>(<span class="number">5</span>, <span class="number">1</span>); <span class="comment">// 删除指定位置的字符</span></span><br><span class="line">str3.<span class="built_in">replace</span>(<span class="number">0</span>, <span class="number">5</span>, <span class="string">&quot;Hi&quot;</span>); <span class="comment">// 替换指定位置的字符或字符串</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="查找字符串"><a href="#查找字符串" class="headerlink" title="查找字符串"></a>查找字符串</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">std::<span class="type">size_t</span> pos = str3.<span class="built_in">find</span>(<span class="string">&quot;world&quot;</span>); <span class="comment">// 查找子串的位置</span></span><br><span class="line"><span class="keyword">if</span> (pos != std::string::npos) &#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Found at position &quot;</span> &lt;&lt; pos &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="比较字符串"><a href="#比较字符串" class="headerlink" title="比较字符串"></a>比较字符串</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">bool</span> eq = (str1 == str2); <span class="comment">// 比较两个字符串是否相等</span></span><br><span class="line"><span class="type">bool</span> lt = (str1 &lt; str2); <span class="comment">// 比较两个字符串的大小</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h3><p>vector 容器封装了动态数组</p>
-<p>vector 类模板的声明:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="title class_">T</span>, <span class="keyword">class</span> <span class="title class_">Alloc</span> = allocator&lt;T&gt;&gt;</span><br><span class="line"><span class="keyword">class</span> vector&#123;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">	T *start </span><br><span class="line">	T *finish </span><br><span class="line">	T *end ;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>分配器</strong></p>
-<p>各种 STL 容器模板都接受一个可选的模板参数，该参数指定使用哪个分配器对象来管理内存如果省略该模板参数的值，将默认使用 allocator<T>，用new 和 delete 分配和释放内存</p>
-<h4 id="构造函数和赋值-1"><a href="#构造函数和赋值-1" class="headerlink" title="构造函数和赋值"></a>构造函数和赋值</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec1; <span class="comment">// 默认构造函数，创建一个空的vector</span></span><br><span class="line"><span class="function">std::vector&lt;<span class="type">int</span>&gt; <span class="title">vec2</span><span class="params">(<span class="number">5</span>, <span class="number">10</span>)</span></span>; <span class="comment">// 使用构造函数初始化vector，包含5个值为10的元素</span></span><br><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec3 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;; <span class="comment">// 使用列表初始化语法初始化vector</span></span><br><span class="line"><span class="function">std::vector&lt;<span class="type">int</span>&gt; <span class="title">vec4</span><span class="params">(vec3)</span></span>; <span class="comment">// 使用拷贝构造函数初始化vector</span></span><br><span class="line"><span class="function">std::vector&lt;<span class="type">int</span>&gt; <span class="title">vec5</span><span class="params">(vec3.begin(), vec3.begin() + <span class="number">3</span>)</span></span>; <span class="comment">// 从一个迭代器区间初始化vector</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="访问和修改元素"><a href="#访问和修改元素" class="headerlink" title="访问和修改元素"></a>访问和修改元素</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> val1 = vec3[<span class="number">0</span>]; <span class="comment">// 使用下标访问单个元素</span></span><br><span class="line"><span class="type">int</span> val2 = vec3.<span class="built_in">at</span>(<span class="number">1</span>); <span class="comment">// 使用at()方法访问单个元素，可以进行越界检查</span></span><br><span class="line">vec3[<span class="number">2</span>] = <span class="number">100</span>; <span class="comment">// 修改单个元素的值</span></span><br><span class="line">std::cout &lt;&lt; vec3.<span class="built_in">front</span>() &lt;&lt; std::endl; <span class="comment">// 获取第一个元素的值</span></span><br><span class="line">std::cout &lt;&lt; vec3.<span class="built_in">back</span>() &lt;&lt; std::endl; <span class="comment">// 获取最后一个元素的值</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="操作元素"><a href="#操作元素" class="headerlink" title="操作元素"></a>操作元素</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vec3.<span class="built_in">push_back</span>(<span class="number">6</span>); <span class="comment">// 在末尾添加一个元素</span></span><br><span class="line">vec3.<span class="built_in">pop_back</span>(); <span class="comment">// 删除最后一个元素</span></span><br><span class="line">vec3.<span class="built_in">insert</span>(vec3.<span class="built_in">begin</span>() + <span class="number">2</span>, <span class="number">20</span>); <span class="comment">// 在指定位置插入一个元素</span></span><br><span class="line">vec3.<span class="built_in">erase</span>(vec3.<span class="built_in">begin</span>() + <span class="number">3</span>); <span class="comment">// 删除指定位置的元素</span></span><br><span class="line">vec3.<span class="built_in">clear</span>(); <span class="comment">// 清空vector中的所有元素</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="遍历元素"><a href="#遍历元素" class="headerlink" title="遍历元素"></a>遍历元素</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; vec3.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">    std::cout &lt;&lt; vec3[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line">std::cout &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = vec3.<span class="built_in">begin</span>(); it != vec3.<span class="built_in">end</span>(); it++) &#123;</span><br><span class="line">    std::cout &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line">std::cout &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span>&amp; val : vec3) &#123;</span><br><span class="line">    std::cout &lt;&lt; val &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line">std::cout &lt;&lt; std::endl;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="容量和大小"><a href="#容量和大小" class="headerlink" title="容量和大小"></a>容量和大小</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">bool</span> empty = vec3.<span class="built_in">empty</span>(); <span class="comment">// 判断vector是否为空</span></span><br><span class="line"><span class="type">int</span> size = vec3.<span class="built_in">size</span>(); <span class="comment">// 获取vector中的元素数量</span></span><br><span class="line"><span class="type">int</span> capacity = vec3.<span class="built_in">capacity</span>(); <span class="comment">// 获取vector中可以容纳的元素数量</span></span><br><span class="line">vec3.<span class="built_in">reserve</span>(<span class="number">100</span>); <span class="comment">// 预分配100个元素的空间</span></span><br><span class="line">vec3.<span class="built_in">shrink_to_fit</span>(); <span class="comment">// 缩小vector的容量以适应其当前大小</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="list"><a href="#list" class="headerlink" title="list"></a>list</h3><p>list 容器封装了双链表</p>
-<p>包含头文件: #include<list></p>
-<p>list 类模板的声明:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>, <span class="keyword">class</span> <span class="title class_">Alloc</span> = allocator&lt;T&gt;&gt;</span><br><span class="line"><span class="keyword">class</span> listl&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	iterator head.</span><br><span class="line">	iterator tai:</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">list0; <span class="comment">// 创建一个空的 list 容器</span></span><br><span class="line"><span class="built_in">list</span>(initializer list&lt;T&gt; il); <span class="comment">// 使用统一初始化列表</span></span><br><span class="line"><span class="built_in">list</span>(<span class="type">const</span> list&lt;T&gt;&amp; ; <span class="comment">// 拷贝构造函数</span></span><br><span class="line"><span class="built_in">list</span>(lterator first, lterator last); <span class="comment">// 用选代器创建 list 容器.</span></span><br><span class="line"><span class="built_in">list</span>(list&lt;T&gt;&amp;&amp; l; <span class="comment">// 移动构造函数 (C++11标准)</span></span><br><span class="line"><span class="keyword">explicit</span> <span class="built_in">list</span>(<span class="type">const</span> size t n); <span class="comment">// 创建 list 容器，元素个数为 n。</span></span><br><span class="line"><span class="built_in">list</span>(<span class="type">const</span> size t n, <span class="type">const</span> T&amp; value); <span class="comment">// 创建list 容器，元素个数为 n，值均为 value。</span></span><br></pre></td></tr></table></figure>
-
-
-<p>析构函数~list(释放内存空间</p>
-<h4 id="特性操作"><a href="#特性操作" class="headerlink" title="特性操作"></a>特性操作</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">size_t</span> <span class="title">max_size</span><span class="params">()</span>) <span class="type">const</span></span>; <span class="comment">// 返回容器的最大长度，此函数意义不大。</span></span><br><span class="line"><span class="function"><span class="type">size_t</span> <span class="title">size</span><span class="params">()</span> <span class="type">const</span></span>;  <span class="comment">//返回容器的实际大小 (已使用的空间)</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">empty</span><span class="params">()</span> <span class="type">const</span></span>;  <span class="comment">// 判断容器是否为空</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">clear</span><span class="params">()</span></span>;  <span class="comment">// 清空容器</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">resize</span><span class="params">(<span class="type">size_t</span> size)</span></span>;  <span class="comment">// 把容器的实际大小置为 size。</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">resize</span><span class="params">(<span class="type">size_t</span> size,<span class="type">const</span> T &amp;value)</span></span>; <span class="comment">// 把容器的实际大小置为 size，如果 size&lt;实际大小，会截断多出的部分: 如果 size&gt;实际大小，就用 value 填充</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="元素操作"><a href="#元素操作" class="headerlink" title="元素操作"></a>元素操作</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">T &amp;<span class="title">front</span><span class="params">()</span></span>; <span class="comment">// 第一个元素</span></span><br><span class="line"><span class="function">Const T &amp;<span class="title">front</span><span class="params">()</span></span>;<span class="comment">//第一个元素，只读。</span></span><br><span class="line"><span class="function"><span class="type">const</span> T &amp;<span class="title">back</span><span class="params">()</span></span>;<span class="comment">//最后一个元素，只读。</span></span><br><span class="line"><span class="function">T &amp;<span class="title">back</span><span class="params">()</span></span>;</span><br><span class="line"><span class="comment">// 最后一个元素</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="赋值操作"><a href="#赋值操作" class="headerlink" title="赋值操作"></a>赋值操作</h4><p>给已存在的容器赋值，将覆盖容器中原有的内容</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">list &amp;<span class="keyword">operator</span>=(<span class="type">const</span> list&lt;T&gt; &amp;l);  <span class="comment">// 把容I 值给当前容器1) </span></span><br><span class="line">list &amp;<span class="keyword">operator</span>=(initializer_list&lt;T&gt; l); <span class="comment">// 用统一初始化列表给当前容器赋值.</span></span><br><span class="line"><span class="function">list <span class="title">assign</span><span class="params">(initializer_list&lt;T&gt; l)</span></span>;<span class="comment">// 使用统一初始化列表赋值.</span></span><br><span class="line"><span class="function">list <span class="title">assign</span><span class="params">(lterator first, Iterator last)</span></span>; <span class="comment">// 用选代器值</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">assign</span><span class="params">(<span class="type">const</span> <span class="type">size_t</span> n, <span class="type">const</span> T&amp; value)</span></span>; <span class="comment">// 把n个value 给容器赋值.</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="交换、反转、排序、归并"><a href="#交换、反转、排序、归并" class="headerlink" title="交换、反转、排序、归并"></a>交换、反转、排序、归并</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">swap</span><span class="params">(list&lt;T&gt; &amp;l)</span></span>; <span class="comment">// 把当前容器与1交换，交换的是链表结点的地址</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">reverse</span><span class="params">()</span></span>;  <span class="comment">// 反转链表</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">sort</span><span class="params">()</span></span>;  <span class="comment">//对容器中的元素进行升序排序</span></span><br><span class="line">的</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">sort</span><span class="params">(_Pr2 _Pred)</span></span>;<span class="comment">// 对容器中的元素进行排序，排序的方法由_Pred 决定 (二元函数)</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">merge</span><span class="params">(list&lt;T&gt; &amp;l)</span></span>; <span class="comment">// 采用归并法合并两个已排序的 list 容器，合并后的 list 容器仍是有序的</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="插入和删除"><a href="#插入和删除" class="headerlink" title="插入和删除"></a>插入和删除</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">push_back</span><span class="params">(<span class="type">const</span> T&amp; value)</span></span>; <span class="comment">// 在链表的尾部追加一个元素。</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">emplace_back</span><span class="params">(...)</span></span>;  <span class="comment">// 在链表的尾部追加一个元素，...用于构造元素。C++11</span></span><br><span class="line"><span class="function">iterator <span class="title">insert</span><span class="params">(iterator pos, <span class="type">const</span> T&amp; value)</span></span>; <span class="comment">// 在指定位置插入一个元素，返回指向插入元素的迭代器。</span></span><br><span class="line"><span class="function">iterator <span class="title">emplace</span> <span class="params">(iterator pos,...)</span></span>; <span class="comment">// 在指定位置插入一个元素，...用于构造元素，返回指向</span></span><br><span class="line">插入元素的迭代器。C++<span class="number">11</span></span><br><span class="line"><span class="function">iterator <span class="title">insert</span><span class="params">(iterator pos, iterator first, iterator last)</span></span>; <span class="comment">// 在指定位置插入一个区间的元素，</span></span><br><span class="line"><span class="function"><span class="type">void</span> pop <span class="title">back</span><span class="params">()</span></span>;  <span class="comment">// 从链表尾部删除一个元素</span></span><br><span class="line"><span class="function">iterator <span class="title">erase</span><span class="params">(iterator pos)</span></span>; <span class="comment">// 删除指定位置的元素，返回下一个有效的迭代器</span></span><br><span class="line"><span class="function">iterator <span class="title">erase</span><span class="params">(iterator first, iterator last)</span></span>; <span class="comment">// 删除指定区间的元素，返回下一个有效的选代器</span></span><br><span class="line"><span class="built_in">push_front</span>(<span class="type">const</span> T&amp; value); <span class="comment">// 在链表的头部插入一个元素</span></span><br><span class="line"><span class="built_in">emplace_front</span>(...):<span class="comment">// 在链表的头部插入一个元素，...用于构造元素。C++11</span></span><br><span class="line"><span class="built_in">splice</span>(iterator pos, <span class="type">const</span> vector&lt;T&gt; &amp; l); <span class="comment">// 把另一个链表连接到当前链表,</span></span><br><span class="line"><span class="built_in">splice</span>(iterator pos, <span class="type">const</span> vector&lt;T&gt; &amp; l, iterator first, iterator last); <span class="comment">// 把另一个链表指主的区间连接到当前链表</span></span><br><span class="line"><span class="built_in">splice</span>(iterator pos, <span class="type">const</span> vector&lt;T&gt; &amp; l, iterator first); <span class="comment">// 把另一个链表从first开始的结点连接到当前链表</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">remove</span><span class="params">(<span class="type">const</span> T&amp; value)</span>: // 删除链表中所有值等于 value 的元素</span></span><br><span class="line"><span class="function">void remove_if(_Pr1 _Pred);</span><span class="comment">// 删除链表中满足条件的元素，参数_Pred 是一元函数</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">unique</span><span class="params">()</span></span>;  <span class="comment">//删除链表中相邻的重复元素，只保留一个。</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pop_front</span><span class="params">()</span></span>; <span class="comment">// 从链表头部删除一个元素</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><p>迭代器是访问容器中元素的通用方法</p>
-<p>如果使用迭代器，不同的容器，访问元素的方法是相同的。</p>
-<p>迭代器支持的基本操作: 赋值 (&#x3D;) 、解引用 (*) 、比较 (&#x3D;&#x3D;和!&#x3D;) 、从左向右遍历 (++)般情况下，迭代器是指针和移动指针的方法。</p>
-<p>迭代器分为五种类型，分别为输入迭代器、输出迭代器、前向迭代器、双向迭代器和随机访问迭代器。它们按照支持的操作能力从弱到强排列。</p>
-<p>迭代器的基本操作包括：</p>
-<ul>
-<li><code>*it</code>：返回迭代器 <code>it</code> 所指向的元素。</li>
-<li><code>it-&gt;member</code>：返回迭代器 <code>it</code> 所指向的元素的成员 <code>member</code>。</li>
-<li><code>++it</code>：将迭代器 <code>it</code> 指向下一个元素。</li>
-<li><code>--it</code>：将迭代器 <code>it</code> 指向上一个元素。</li>
-<li><code>it1 == it2</code>：判断迭代器 <code>it1</code> 和 <code>it2</code> 是否相等。</li>
-<li><code>it1 != it2</code>：判断迭代器 <code>it1</code> 和 <code>it2</code> 是否不相等。</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::vector&lt;<span class="type">int</span>&gt; myVector = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 输出 vector 中的元素</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;vector: &quot;</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> it = myVector.<span class="built_in">begin</span>(); it != myVector.<span class="built_in">end</span>(); ++it) &#123;</span><br><span class="line">        std::cout &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    std::cout &lt;&lt; std::endl;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 在 vector 中插入元素</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;insert 6&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    myVector.<span class="built_in">insert</span>(myVector.<span class="built_in">end</span>(), <span class="number">6</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 输出 vector 中的元素</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;vector: &quot;</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> it = myVector.<span class="built_in">begin</span>(); it != myVector.<span class="built_in">end</span>(); ++it) &#123;</span><br><span class="line">        std::cout &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    std::cout &lt;&lt; std::endl;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 删除 vector 中的元素</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;erase 3&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    myVector.<span class="built_in">erase</span>(myVector.<span class="built_in">begin</span>() + <span class="number">2</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 输出 vector 中的元素</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;vector: &quot;</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> it = myVector.<span class="built_in">begin</span>(); it != myVector.<span class="built_in">end</span>(); ++it) &#123;</span><br><span class="line">        std::cout &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    std::cout &lt;&lt; std::endl;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="vector与list的区别与应用"><a href="#vector与list的区别与应用" class="headerlink" title="vector与list的区别与应用"></a>vector与list的区别与应用</h3><h4 id="vector-1"><a href="#vector-1" class="headerlink" title="vector"></a>vector</h4><p>vector数据结构 vector和数组类似，拥有一段连续的内存空间，并且起始地址不变。因此能高效的进行随机存取，时间复杂度为o(1);但因为内存空间是连续的，所以在进行插入和删除操作时，会造成内存块的拷贝，时间复杂度为o(n)。</p>
-<p>另外，当数组中内存空间不够时，会重新申请一块内存空间并进行内存拷贝。连续存储结构：vector是可以实现动态增长的对象数组，支持对数组高效率的访问和在数组尾端的删除和插入操作，在中间和头部删除和插入相对不易，需要挪动大量的数据。</p>
-<p>它与数组最大的区别就是vector不需程序员自己去考虑容量问题，库里面本身已经实现了容量的动态增长，而数组需要程序员手动写入扩容函数进形扩容。</p>
-<h4 id="list-1"><a href="#list-1" class="headerlink" title="list"></a>list</h4><p>list数据结构 list是由双向链表实现的，因此内存空间是不连续的。只能通过指针访问数据，所以list的随机存取非常没有效率，时间复杂度为o(n);但由于链表的特点，能高效地进行插入和删除。非连续存储结构：list是一个双链表结构，支持对链表的双向遍历。每个节点包括三个信息：元素本身，指向前一个元素的节点（prev）和指向下一个元素的节点（next）。因此list可以高效率的对数据元素任意位置进行访问和插入删除等操作。由于涉及对额外指针的维护，所以开销比较大。</p>
-<h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><ul>
-<li>vector的随机访问效率高，但在插入和删除时（不包括尾部）需要挪动数据，不易操作。</li>
-<li>list的访问要遍历整个链表，它的随机访问效率低。但对数据的插入和删除操作等都比较方便，改变指针的指向即可。</li>
-<li>从遍历上来说，list是单向的，vector是双向的。</li>
-<li>vector中的迭代器在使用后就失效了，而list的迭代器在使用之后还可以继续使用。</li>
-</ul>
-<h3 id="vector删除其中的元素，迭代器如何变化？为什么是两倍扩容？释放空间？"><a href="#vector删除其中的元素，迭代器如何变化？为什么是两倍扩容？释放空间？" class="headerlink" title="vector删除其中的元素，迭代器如何变化？为什么是两倍扩容？释放空间？"></a>vector删除其中的元素，迭代器如何变化？为什么是两倍扩容？释放空间？</h3><p>size()函数返回的是已用空间大小，capacity()返回的是总空间大小，capacity()-size()则是剩余的可用空间大小。当size()和capacity()相等，说明vector目前的空间已被用完，如果再添加新元素，则会引起vector空间的动态增长。</p>
-<p>由于动态增长会引起重新分配内存空间、拷贝原空间、释放原空间，这些过程会降低程序效率。因此，可以使用reserve(n)预先分配一块较大的指定大小的内存空间，这样当指定大小的内存空间未使用完时，是不会重新分配内存空间的，这样便提升了效率。只有当n&gt;capacity()时，调用reserve(n)才会改变vector容量。</p>
-<p>resize()成员函数改变元素的数目，至于空间的的变化需要看具体情况去分析，如下：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">resize</span><span class="params">(size_type __new_size, <span class="type">const</span> _Tp&amp; __x)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (__new_size &lt; <span class="built_in">size</span>()) </span><br><span class="line">            <span class="built_in">erase</span>(<span class="built_in">begin</span>() + __new_size, <span class="built_in">end</span>());</span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">insert</span>(<span class="built_in">end</span>(), __new_size - <span class="built_in">size</span>(), __x);</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
-
-<p>1、空的vector对象，size()和capacity()都为0</p>
-<p>2、当空间大小不足时，新分配的空间大小为原空间大小的2倍。</p>
-<p>3、使用reserve()预先分配一块内存后，在空间未满的情况下，不会引起重新分配，从而提升了效率。</p>
-<p>4、当reserve()分配的空间比原空间小时，是不会引起重新分配的。</p>
-<p>5、resize()函数只改变容器的元素数目，未改变容器大小。</p>
-<p>6、用reserve(size_type)只是扩大capacity值，这些内存空间可能还是“野”的，如果此时使用“[ ]”来访问，则可能会越界。而resize(size_type new_size)会真正使容器具有new_size个对象。</p>
-<p>不同的编译器，vector有不同的扩容大小。在vs下是1.5倍，在GCC下是2倍；</p>
-<p>空间和时间的权衡。简单来说， 空间分配的多，平摊时间复杂度低，但浪费空间也多。</p>
-<p>使用k&#x3D;2增长因子的问题在于，每次扩展的新尺寸必然刚好大于之前分配的总和，也就是说，之前分配的内存空间不可能被使用。这样对内存不友好，最好把增长因子设为(1, 2)，也就是1-2之间的某个数值。</p>
-<p>对比可以发现采用采用成倍方式扩容，可以保证常数的时间复杂度，而增加指定大小的容量只能达到O(n)的时间复杂度，因此，使用成倍的方式扩容。</p>
-<h3 id="Vector如何释放空间"><a href="#Vector如何释放空间" class="headerlink" title="Vector如何释放空间"></a>Vector如何释放空间</h3><p>由于vector的内存占用空间只增不减，比如你首先分配了10,000个字节，然后erase掉后面9,999个，留下一个有效元素，但是内存占用仍为10,000个。所有内存空间是在vector析构时候才能被系统回收。empty()用来检测容器是否为空的，clear()可以清空所有元素。但是即使clear()，vector所占用的内存空间依然如故，无法保证内存的回收。</p>
-<p>如果需要空间动态缩小，可以考虑使用deque。</p>
-<p>如果使用vector，可以用swap()来帮助你释放多余内存或者清空全部内存。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>(Vec).<span class="built_in">swap</span>(Vec); <span class="comment">//将Vec中多余内存清除； </span></span><br><span class="line"><span class="built_in">vector</span>().<span class="built_in">swap</span>(Vec); <span class="comment">//清空Vec的全部内存；</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p>map 容器封装了红黑树 (平衡二叉排序树)，用于查找</p>
-<p>包含头文件: #include<map></p>
-<p>map 容器的元素是 pair 键值对</p>
-<p>map 类模板的声明:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">K</span>, <span class="keyword">class</span> <span class="title class_">V</span>, <span class="keyword">class</span> <span class="title class_">P</span> = less&lt;K&gt;, <span class="keyword">class</span> Alloc = allocator&lt;pair&lt;<span class="type">const</span> K, V &gt;&gt;&gt;</span><br><span class="line"><span class="keyword">class</span> map : <span class="keyword">public</span> _Tree&lt; _Tmap_traits&lt; K, V, P，_Alloc, <span class="literal">false</span>&gt; &gt;</span><br></pre></td></tr></table></figure>
-
-<p>第一个模板参数 K: key 的数据类型 (pair.first)<br>第二个模板参数 V: value 的数据类型 (pair.second)<br>第三个模板参数 P: 排序方法，缺省按 key 升序第四个模板参数_Alloc: 分配器，缺省用 new 和 delete。<br>map 提供了双向迭代器<br>二叉链表:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">BTNode</span></span><br><span class="line">&#123;</span><br><span class="line">	pair&lt;K,V&gt; p;  <span class="comment">// 键值对。</span></span><br><span class="line">	BTNode *parent;<span class="comment">// 父节点。</span></span><br><span class="line">	BTNode *Ichirld;<span class="comment">// 左子树。				BTNode*rchild;  // 右子树。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="构造函数-1"><a href="#构造函数-1" class="headerlink" title="构造函数"></a>构造函数</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">map0; <span class="comment">// 创建一个空的 map 容器</span></span><br><span class="line"><span class="built_in">map</span>(initializer_list&lt;pair&lt;K,V&gt;&gt; i);<span class="comment">// 使用统一初始化列表。</span></span><br><span class="line"><span class="built_in">map</span>(<span class="type">const</span> map&lt;K,V&gt;&amp; m); <span class="comment">// 拷贝构造函数</span></span><br><span class="line"><span class="built_in">map</span>(lterator first, lterator last); <span class="comment">// 用选代器创建 map 容器</span></span><br><span class="line"><span class="built_in">map</span>(map&lt;K,V&gt;&amp;&amp; m); <span class="comment">// 移动构造函数 (C++11 标准)</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h4><ul>
-<li><code>insert()</code>：插入一个键值对。</li>
-<li><code>erase()</code>：删除一个键值对。</li>
-<li><code>find()</code>：查找一个键对应的值。</li>
-<li><code>operator[]</code>：访问一个键对应的值。</li>
-<li><code>size()</code>：返回 <code>map</code> 中键值对的数量。</li>
-<li><code>empty()</code>：判断 <code>map</code> 是否为空。</li>
-<li><code>clear()</code>：清空 <code>map</code> 中的所有键值对。</li>
-</ul>
-<h3 id="unordered-map"><a href="#unordered-map" class="headerlink" title="unordered_map"></a>unordered_map</h3><p>unordered_map 容器封装了哈希表，查找、插入和删除元素时，只需要比较几次 key 的值包含头文件: #include<unordered_map></p>
-<p>unordered_map 容器的元素是 pair 键值对</p>
-<p>unordered_map 类模板的声明:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">K</span>, <span class="keyword">class</span> <span class="title class_">V</span>, <span class="keyword">class</span> <span class="title class_">_Hasher</span> = hash&lt;K&gt;, <span class="keyword">class</span> _Keyeq = equal_to&lt;K&gt;. <span class="keyword">class</span> _Alloc = allocator&lt;pair&lt;<span class="type">const</span> K, V&gt;&gt;&gt;</span><br><span class="line"><span class="keyword">class</span> unordered_map : <span class="keyword">public</span> _Hash&lt; _Umap_traits&lt;K, V, Uhash_compare&lt;K, _Hasher,_Keyeq&gt;，_Alloc, <span class="literal">false</span>&gt; &gt;</span><br></pre></td></tr></table></figure>
-
-<p>第一个模板参数K:key 的数据类型!(pair.first)<br>第二个模板参数 V:value 的数据类型 (pair.second)<br>第三个模板参数_Hasher: 哈希函数，默认值为 std::hash<K><br>第四个模板参数_Keyeq:比较函数，用于判断两个 key 是相等，默认值是 std::equ<br>第五个模板参数_Alloc: 分配器，缺省用 new 和 delete。<br>创建 std::unordered map 类模板的别名:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="title class_">K</span>,<span class="keyword">class</span> <span class="title class_">V</span>&gt;</span><br><span class="line"><span class="keyword">using</span> umap = std::unordered _map&lt;K, V&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="构造函数-2"><a href="#构造函数-2" class="headerlink" title="构造函数"></a>构造函数</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">umap</span>(); <span class="comment">// 创建一个空的 umap 容器.</span></span><br><span class="line"><span class="built_in">umap</span>(<span class="type">size_t</span> bucket); <span class="comment">// 创建一个空的 umap 容器，指定了桶的个数，下同</span></span><br><span class="line"><span class="built_in">umap</span>(initializer_list&lt;pair&lt;K,V&gt;&gt; il);<span class="comment">// 使用统一初始化列表</span></span><br><span class="line"><span class="built_in">umap</span>(initializer_list&lt;pair&lt;K,V&gt;&gt; il, <span class="type">size_t</span> bucket);<span class="comment">// 使用统一初始化列表.</span></span><br><span class="line"><span class="built_in">umap</span>(lterator first, lterator last); <span class="comment">// 用迭代器创建 umap 容器</span></span><br><span class="line"><span class="built_in">umap</span>(lterator first, lterator last, <span class="type">size_t</span> bucket); <span class="comment">// 用选代器创建 umap 容器</span></span><br><span class="line"><span class="built_in">umap</span>(<span class="type">const</span> umap&lt;KV&gt;&amp; m); <span class="comment">// 拷贝构造函数</span></span><br><span class="line"><span class="built_in">umap</span>(umap&lt;K,V&gt;&amp;&amp; m); <span class="comment">// 移动构造函数 (C++11 标准)</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="常用操作-1"><a href="#常用操作-1" class="headerlink" title="常用操作"></a>常用操作</h4><ul>
-<li><code>insert</code>：插入一个元素到 <code>unordered_map</code> 中。</li>
-<li><code>find</code>：根据键查找一个元素，如果找到则返回指向该元素的迭代器，否则返回 <code>end()</code>。</li>
-<li><code>erase</code>：根据键或迭代器删除一个元素。</li>
-<li><code>size</code>：返回 <code>unordered_map</code> 中元素的数量。</li>
-<li><code>clear</code>：清空 <code>unordered_map</code> 中所有元素。</li>
-</ul>
-<h3 id="unordered-map-hash-map-和map的区别，hash-map如何解决冲突以及扩容"><a href="#unordered-map-hash-map-和map的区别，hash-map如何解决冲突以及扩容" class="headerlink" title="unordered_map(hash_map)和map的区别，hash_map如何解决冲突以及扩容"></a>unordered_map(hash_map)和map的区别，hash_map如何解决冲突以及扩容</h3><ol>
-<li>unordered_map和map类似，都是存储的key-value的值，可以通过key快速索引到value。不同的是unordered_map不会根据key的大小进行排序，</li>
-<li>存储时是根据key的hash值判断元素是否相同，即unordered_map内部元素是无序的，而map中的元素是按照二叉搜索树存储，进行中序遍历会得到有序遍历。</li>
-<li>所以使用时map的key需要定义operator&lt;。而unordered_map需要定义hash_value函数并且重载operator&#x3D;&#x3D;。但是很多系统内置的数据类型都自带这些，</li>
-<li>那么如果是自定义类型，那么就需要自己重载operator&lt;或者hash_value()了。</li>
-<li>如果需要内部元素自动排序，使用map，不需要排序使用unordered_map</li>
-<li>unordered_map的底层实现是hash_table;</li>
-<li>hash_map底层使用的是hash_table，而hash_table使用的开链法进行冲突避免，所有hash_map采用开链法进行冲突解决。</li>
-<li><strong>什么时候扩容：</strong>当向容器添加元素的时候，会判断当前容器的元素个数，如果大于等于阈值—即当前数组的长度乘以加载因子的值的时候，就要自动扩容啦。</li>
-<li>**扩容(resize)**就是重新计算容量，向HashMap对象里不停的添加元素，而HashMap对象内部的数组无法装载更多的元素时，对象就需要扩大数组的长度，以便能装入更多的元素。</li>
-</ol>
-<h3 id="deque"><a href="#deque" class="headerlink" title="deque"></a>deque</h3><h4 id="物理结构"><a href="#物理结构" class="headerlink" title="物理结构"></a>物理结构</h4><p>deque 容器存储数据的空间是多段等长的连续空间构成，各段空间之间并不一定是连续的.<br>为了管理这些连续空间的分段，deque 容器用一个数组存放着各分段的首地址。</p>
-<p>通过建立数组，deque 容器的分段的连续空间能实现整体连续的效果。</p>
-<p>当 deque 容器在头部或尾部增加元素时，会申请一段新的连续空间，同时在数组中添加指向该空间<br>的指针。</p>
-<h4 id="迭代器-1"><a href="#迭代器-1" class="headerlink" title="迭代器"></a>迭代器</h4><p>随机访问迭代器</p>
-<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><p>提高了在两端插入和删除元素的效率，扩展空间的时候，不需要拷贝以前的元素.<br>在中间插入和删除元素的效率比 vector 更糟糕。<br>随机访问的效率比 vector 容器略低。</p>
-<h4 id="各种操作"><a href="#各种操作" class="headerlink" title="各种操作"></a>各种操作</h4><p>与 vector 容器相同</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/ef7377bf.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
