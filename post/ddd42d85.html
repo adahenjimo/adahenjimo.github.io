@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"dandanking.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.15.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="​		C++11一些关键的特性">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++11特性">
+<meta property="og:url" content="https://dandanking.github.io/post/ddd42d85.html">
+<meta property="og:site_name" content="蛋挞王国">
+<meta property="og:description" content="​		C++11一些关键的特性">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-04T01:23:21.000Z">
+<meta property="article:modified_time" content="2023-04-04T01:37:34.028Z">
+<meta property="article:author" content="蛋挞一号">
+<meta property="article:tag" content="C++">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://dandanking.github.io/post/ddd42d85.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://dandanking.github.io/post/ddd42d85.html","path":"post/ddd42d85.html","title":"C++11特性"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>C++11特性 | 蛋挞王国</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">蛋挞王国</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">敢于尝试</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#nullptr%E6%9B%BF%E4%BB%A3NULL"><span class="nav-number">1.</span> <span class="nav-text">nullptr替代NULL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E5%85%A5%E4%BA%86auto%E5%92%8Cdecltype%E8%BF%99%E4%B8%A4%E4%B8%AA%E5%85%B3%E9%94%AE%E5%AD%97%E5%AE%9E%E7%8E%B0%E4%BA%86%E7%B1%BB%E5%9E%8B%E6%8E%A8%E5%AF%BC"><span class="nav-number">2.</span> <span class="nav-text">引入了auto和decltype这两个关键字实现了类型推导</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#auto"><span class="nav-number">2.1.</span> <span class="nav-text">auto</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#decltype"><span class="nav-number">2.2.</span> <span class="nav-text">decltype</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88%E7%9A%84%E5%8E%9F%E7%90%86%E3%80%81%E5%B8%B8%E7%94%A8%E7%9A%84%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88%E5%8F%8A%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.</span> <span class="nav-text">智能指针的原理、常用的智能指针及实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#unique-ptr"><span class="nav-number">3.1.</span> <span class="nav-text">unique_ptr</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#shared-ptr"><span class="nav-number">3.2.</span> <span class="nav-text">shared_ptr</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#weak-ptr"><span class="nav-number">3.3.</span> <span class="nav-text">weak_ptr</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#auto-ptr"><span class="nav-number">3.4.</span> <span class="nav-text">auto_ptr</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E8%8C%83%E5%9B%B4%E7%9A%84for%E5%BE%AA%E7%8E%AFfor-auto-amp-i-res"><span class="nav-number">4.</span> <span class="nav-text">基于范围的for循环for(auto&amp; i : res){}</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%92%8C%E7%BB%93%E6%9E%84%E4%BD%93%E7%9A%84%E4%B8%AD%E5%88%9D%E5%A7%8B%E5%8C%96%E5%88%97%E8%A1%A8"><span class="nav-number">5.</span> <span class="nav-text">类和结构体的中初始化列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%88%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%EF%BC%89"><span class="nav-number">6.</span> <span class="nav-text">Lambda表达式（匿名函数）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E5%88%97%E8%A1%A8"><span class="nav-number">6.1.</span> <span class="nav-text">参数列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E7%B1%BB%E5%9E%8B"><span class="nav-number">6.2.</span> <span class="nav-text">返回类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E4%BD%93"><span class="nav-number">6.3.</span> <span class="nav-text">函数体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8D%95%E8%8E%B7%E5%88%97%E8%A1%A8"><span class="nav-number">6.4.</span> <span class="nav-text">捕获列表</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%80%BC%E6%8D%95%E8%8E%B7"><span class="nav-number">6.4.1.</span> <span class="nav-text">值捕获</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E6%8D%95%E8%8E%B7"><span class="nav-number">6.4.2.</span> <span class="nav-text">引用捕获</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%9A%90%E5%BC%8F%E6%8D%95%E8%8E%B7"><span class="nav-number">6.4.3.</span> <span class="nav-text">隐式捕获</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B7%B7%E5%90%88%E6%96%B9%E5%BC%8F%E6%8D%95%E8%8E%B7"><span class="nav-number">6.4.4.</span> <span class="nav-text">混合方式捕获</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%80%BC%E6%8D%95%E8%8E%B7%E5%8F%98%E9%87%8F%E7%9A%84%E5%80%BC"><span class="nav-number">6.4.5.</span> <span class="nav-text">修改值捕获变量的值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E8%AF%B4%E6%98%8E"><span class="nav-number">6.4.6.</span> <span class="nav-text">异常说明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#std-forward-list%EF%BC%88%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8%EF%BC%89"><span class="nav-number">7.</span> <span class="nav-text">std::forward_list（单向链表）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8%E5%92%8C%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89"><span class="nav-number">8.</span> <span class="nav-text">右值引用和移动语义</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B7%A6%E5%80%BC%E3%80%81%E5%8F%B3%E5%80%BC"><span class="nav-number">8.1.</span> <span class="nav-text">左值、右值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89"><span class="nav-number">8.2.</span> <span class="nav-text">移动语义</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="蛋挞一号"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">蛋挞一号</p>
+  <div class="site-description" itemprop="description">记录 / 阅读 / 旅行</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/dandanking" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;dandanking" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:guanyu97@foxmail.com" title="E-Mail → mailto:guanyu97@foxmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://dandanking.github.io/post/ddd42d85.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="蛋挞一号">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蛋挞王国">
+      <meta itemprop="description" content="记录 / 阅读 / 旅行">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="C++11特性 | 蛋挞王国">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          C++11特性
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-04-04 09:23:21 / 修改时间：09:37:34" itemprop="dateCreated datePublished" datetime="2023-04-04T09:23:21+08:00">2023-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>​		C++11一些关键的特性</p>
+<span id="more"></span>
+
+<h3 id="nullptr替代NULL"><a href="#nullptr替代NULL" class="headerlink" title="nullptr替代NULL"></a>nullptr替代NULL</h3><p>空指针是不会指向有效数据的指针。以前，C&#x2F;C++用0表示空指针，这带来了一些问题，这样的话0既可以表示指针常量，又可以表示整型常量。</p>
+<p>C++11 新增了关键字 nullptr，用于表示空指针:它是指针类型，不是整型类型</p>
+<p>为了向后兼容，C++11 仍允许用0来表示空指针，因此表达式 nullptr&#x3D;&#x3D; 0为 true。</p>
+<p>使用 nullptr 提供了更高的类型安全。例如，可以将0传递给形参为 int 的函数，但是，如果将 nullptr 传递给这样的函数，编译器将视为错误。<br>因此，出于清晰和安全考虑，请使用 nullptr。</p>
+<h3 id="引入了auto和decltype这两个关键字实现了类型推导"><a href="#引入了auto和decltype这两个关键字实现了类型推导" class="headerlink" title="引入了auto和decltype这两个关键字实现了类型推导"></a>引入了auto和decltype这两个关键字实现了类型推导</h3><h4 id="auto"><a href="#auto" class="headerlink" title="auto"></a>auto</h4><p>在C++11 中，赋予了 auto 全新的合义，不再用于修饰变量，而是作为一个类型指示符，指示编译器在编译时推导 auto 声明的变量的数据类型</p>
+<p>语法:auto 变量名 &#x3D; 初始值</p>
+<p>在 Linux 平台下，编译需要加-std&#x3D;c++11 参数</p>
+<p>注意:</p>
+<ul>
+<li>auto 声明的变量必须在定义时初始化</li>
+<li>初始化的右值可以是具体的数值，也可以是表达式和函数的返回值等</li>
+<li>auto 不能作为函数的形参类型</li>
+<li>auto 不能直接声明数组。</li>
+<li>auto 不能定义类的非静态成员变量</li>
+</ul>
+<p>不要滥用 auto，auto 在编程时真正的用途如下:</p>
+<ul>
+<li>代替冗长复杂的变量声明</li>
+<li>在模板中，用于声明依赖模板参数的变量</li>
+<li>函数模板依赖模板参数的返回值</li>
+<li>用于lambda 表达式中</li>
+</ul>
+<h4 id="decltype"><a href="#decltype" class="headerlink" title="decltype"></a>decltype</h4><p>若只希望从表达式中推断出要定义变量的类型，但却不想用表达式的值去初始化变量。还有可能是函数的返回类型为某表达式的值类型。在这些时候auto显得就无力了，所以C++11又引入了第二种类型说明符decltype</p>
+<p>在 C++11中，decltype 操作符，用于查询表达式的数据类型</p>
+<p>语法: decltype(expression) var;</p>
+<p>decltype 分析表达式并得到它的类型，不会计算执行表达式。函数调用也一种表达式，因此不必担心在使用 decltype 时执行了函数</p>
+<p>decltype 推导规则(按步骤)：<br>1)如果 expression 是一个没有用括号括起来的标识符，则 var 的类型与该标识符的类型相同，包括const 等限定符。<br>2)如果 expression 是一个函数调用，则 var 的类型与函数的返回值类型相同(函数不能返回 void但可以返回 void *)<br>3)如果 expression 是一个左值(能取地址)(要排除第一种情况)、或者用括号括起来的标识符，那么 var 的类型是 expression 的引用.<br>4)如果上面的条件都不满足，则 var 的类型与 expression 的类型相同</p>
+<p>如果需要多次使用 decltype，可以结合 typedef和 using.</p>
+<h3 id="智能指针的原理、常用的智能指针及实现"><a href="#智能指针的原理、常用的智能指针及实现" class="headerlink" title="智能指针的原理、常用的智能指针及实现"></a>智能指针的原理、常用的智能指针及实现</h3><h4 id="unique-ptr"><a href="#unique-ptr" class="headerlink" title="unique_ptr"></a>unique_ptr</h4><p>unique_ptr采用的是独享所有权语义，一个非空的unique_ptr总是拥有它所指向的资源。转移一个unique_ptr将会把所有权全部从源指针转移给目标指针，源指针被置空；所以unique_ptr不支持普通的拷贝和赋值操作，不能用在STL标准容器中；局部变量的返回值除外（因为编译器知道要返回的对象将要被销毁）；如果你拷贝一个unique_ptr，那么拷贝结束后，这两个unique_ptr都会指向相同的资源，造成在结束时对同一内存指针多次释放而导致程序崩溃。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//包含头文件: </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;memory&gt;</span></span></span><br><span class="line"><span class="comment">//方法一:</span></span><br><span class="line"><span class="function">unique_ptr&lt;AA&gt; <span class="title">p0</span><span class="params">(<span class="keyword">new</span> AA(<span class="string">&quot;你好&quot;</span>))</span></span>; <span class="comment">// 分配内存并初始化。</span></span><br><span class="line"><span class="comment">//方法二</span></span><br><span class="line">unique_ptr&lt;AA&gt; pO = <span class="built_in">make_unique</span>&lt;AA&gt;(<span class="string">&quot;你好&quot;</span>);<span class="comment">// C++14 标准,</span></span><br><span class="line">unique_ptr&lt;<span class="type">int</span>&gt; pp1=<span class="built_in">make_unique</span>&lt;<span class="type">int</span>&gt;();; <span class="comment">// 数据类型为 int。</span></span><br><span class="line">unique_ptr&lt;AA&gt; pp2 = <span class="built_in">make_unique</span>&lt;AA&gt;();<span class="comment">// 数据类型为 AA，默认构造函数</span></span><br><span class="line">unique_ptr&lt;AA&gt; pp3 = <span class="built_in">make_unique</span>&lt;AA&gt;(<span class="string">&quot;你好&quot;</span>); <span class="comment">// 数据类型为 AA,一个参数的构造函数</span></span><br><span class="line">unique_ptr&lt;AA&gt; pp4 = <span class="built_in">make_unique</span>&lt;AA&gt;(<span class="string">&quot;你好”,8); // 数据类型为 AA,两个参数的构造函数.</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="shared-ptr"><a href="#shared-ptr" class="headerlink" title="shared_ptr"></a>shared_ptr</h4><p>shared_ptr共享它指向的对象，多个 shared_ptr 可以指向(关联)相同的对象，在内部采用计数机制来实现。</p>
+<p>当新的 shared_ptr 与对象关联时，引用计数增加 1。当shared_ptr 超出作用域时，引用计数减 1。当引用计数变为 0时，则表示没有任何shared_ptr与对象关联，则释放该对象。</p>
+<h4 id="weak-ptr"><a href="#weak-ptr" class="headerlink" title="weak_ptr"></a>weak_ptr</h4><p>引用计数有一个问题就是互相引用形成环（环形引用），这样两个指针指向的内存都无法释放。需要使用weak_ptr打破环形引用。weak_ptr是一个弱引用，它是为了配合shared_ptr而引入的一种智能指针，它指向一个由shared_ptr管理的对象而不影响所指对象的生命周期，也就是说，它只引用，不计数。如果一块内存被shared_ptr和weak_ptr同时引用，当所有shared_ptr析构了之后，不管还有没有weak_ptr引用该内存，内存也会被释放。所以weak_ptr不保证它指向的内存一定是有效的，在使用之前使用函数lock()检查weak_ptr是否为空指针。</p>
+<p>weak_ptr 更像是shared_ptr 的助手而不是智能指针</p>
+<p>weak_ptr 不控制对象的生命周期，但是，它知道对象是否还活着。用lock()函数把它可以提升为 shared_ptr，如果对象还活着，返回有效的 shared_ptr，如果对象已经死了，提升会失败，返回一个空的 shared_ptr。提升的行为 (lock()) 是线程安全的。</p>
+<h4 id="auto-ptr"><a href="#auto-ptr" class="headerlink" title="auto_ptr"></a>auto_ptr</h4><p>主要是为了解决“有异常抛出时发生内存泄漏”的问题 。因为发生异常而无法正常释放内存。</p>
+<p>auto_ptr有拷贝语义，拷贝后源对象变得无效，这可能引发很严重的问题；而unique_ptr则无拷贝语义，但提供了移动语义，这样的错误不再可能发生，因为很明显必须使用std::move()进行转移。</p>
+<p>auto_ptr不支持拷贝和赋值操作，不能用在STL标准容器中。STL容器中的元素经常要支持拷贝、赋值操作，在这过程中auto_ptr会传递所有权，所以不能在STL中使用。</p>
+<h3 id="基于范围的for循环for-auto-amp-i-res"><a href="#基于范围的for循环for-auto-amp-i-res" class="headerlink" title="基于范围的for循环for(auto&amp; i : res){}"></a>基于范围的for循环for(auto&amp; i : res){}</h3><p>对于一个有范围的集合来说，在程序代码中指定循环的范围有时候是多余的，还可能犯错误.C++11 中引入了基于范围的for 循环<br>语法:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(选代的变量 : 迭代的范围)&#123;</span><br><span class="line">	循环体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意:<br>1)选代的范围可以是数组名、容器名、初始化列表或者可迭代的对象 (支持 begin()、end()、++、&#x3D;&#x3D;)<br>2) 数组名传入函数后，已退化成指针，不能作为容器名.<br>3)如果容器中的元素是结构体和类，迭代器变量应该申明为引用，加 const 约束表示只读<br>4)注意迭代器失效的问题</p>
+<h3 id="类和结构体的中初始化列表"><a href="#类和结构体的中初始化列表" class="headerlink" title="类和结构体的中初始化列表"></a>类和结构体的中初始化列表</h3><p>C++11 丰富了大括号的使用范围，用大括号括起来的列表(统一的初始化列表)可以用于所有内置类型和用户自定义类型。使用统一的初始化列表时，可以添加等号(&#x3D;)，也可以不添加:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x=(<span class="number">5</span>)</span><br><span class="line"><span class="type">double</span> y&#123;<span class="number">12.75</span>&#125;;</span><br><span class="line"><span class="type">short</span> quar[<span class="number">5</span>]&#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">76</span>,<span class="number">1</span>&#125;:</span><br></pre></td></tr></table></figure>
+
+<p>统一的初始化列表也可以用于 new 表达式中</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> *ar=<span class="keyword">new</span> <span class="type">int</span>[<span class="number">4</span>]&#123;<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">7</span>&#125;:</span><br></pre></td></tr></table></figure>
+
+<p>创建对象时，也可以使用大括号 (而不是圆括号) 来调用构造函数:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Girl</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="type">int</span> m bh;</span><br><span class="line">	string m name;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">Girl</span>(<span class="type">int</span> bh,string name) : <span class="function">m <span class="title">bh</span><span class="params">(bh)</span>,<span class="title">m_name</span><span class="params">(name)</span> f</span></span><br></pre></td></tr></table></figure>
+
+<p>STL 容器提供了将 initializer list 模板类作为参数的构造函数:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">v1</span><span class="params">(<span class="number">10</span>)</span></span>; <span class="comment">// 把v1 初始化为 10 个元素。</span></span><br><span class="line">vector&lt;<span class="type">int</span>&gt; v2&#123;<span class="number">10</span>; <span class="comment">// 把v2 初始化为 1个元素，这个元素的值是 10。</span></span><br><span class="line">vector&lt;<span class="type">int</span>&gt; v213,<span class="number">5</span>,<span class="number">8</span>; <span class="comment">// 把v3 初始化为3 个元素，值分别是 3、5、8。</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Lambda表达式（匿名函数）"><a href="#Lambda表达式（匿名函数）" class="headerlink" title="Lambda表达式（匿名函数）"></a>Lambda表达式（匿名函数）</h3><p>利用lambda表达式可以编写内嵌的匿名函数，用以替换独立函数或者函数对象；</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//捕获列表  参数列表   函数选项   返回类型  函数体</span></span><br><span class="line">[capture] （parameters） <span class="keyword">mutable</span> -&gt;<span class="keyword">return</span>-type &#123;statement&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="参数列表"><a href="#参数列表" class="headerlink" title="参数列表"></a>参数列表</h4><p>参数列表是可选的，类似普通函数的参数列表，如果没有参数列表，0可以省略不写</p>
+<p>与普通函数的不同:</p>
+<ul>
+<li>lambda函数不能有默认参数</li>
+<li>所有参数必须有参数名</li>
+<li>不支持可变参数</li>
+</ul>
+<h4 id="返回类型"><a href="#返回类型" class="headerlink" title="返回类型"></a>返回类型</h4><p>用后置的方法书写返回类型，类似于普通函数的返回类型，如果不写返回类型，编译器会根据函数体中的代码推断出来</p>
+<p>如果有返回类型，建议显式的指定，自动推断可能与预期不一致。</p>
+<h4 id="函数体"><a href="#函数体" class="headerlink" title="函数体"></a>函数体</h4><p>类似于普通函数的函数体</p>
+<h4 id="捕获列表"><a href="#捕获列表" class="headerlink" title="捕获列表"></a>捕获列表</h4><p>通过捕获列表，lambda 函数可以访问父作用域中的非静态局部变量 (静态局部变量可以直接访问,不能访问全局变量)。</p>
+<p>捕获列表书写在{}中，与函数参数的传递类似，捕获方式可以是值和引用</p>
+<h5 id="值捕获"><a href="#值捕获" class="headerlink" title="值捕获"></a>值捕获</h5><p>与传递参数类似，采用值捕获的前提是变量可以拷贝</p>
+<p>与传递参数不同，变量的值是在lambda 函数创建时拷贝，而不是调用时拷贝。</p>
+<h5 id="引用捕获"><a href="#引用捕获" class="headerlink" title="引用捕获"></a>引用捕获</h5><p>和函数引用参数一样，引用变量的值在 lambda 函数体中改变时，将影响被引用的对象</p>
+<h5 id="隐式捕获"><a href="#隐式捕获" class="headerlink" title="隐式捕获"></a>隐式捕获</h5><p>除了显式列出我们希望使用的父作域的变量之外，还可以让编译器根据函数体中的代码来推断需要捕获哪些变量，这种方式称之为隐式捕获.</p>
+<p>隐式捕获有两种方式，分别是[&#x3D;]和[&amp;]。[&#x3D;]表示以值捕获的方式捕获外部变量，[&amp;]表示以引用捕获的方式捕获外部变量。</p>
+<h5 id="混合方式捕获"><a href="#混合方式捕获" class="headerlink" title="混合方式捕获"></a>混合方式捕获</h5><p>即同时使用显式捕获和隐式捕获ambda 函数还支持混合方式捕获，<br>混合捕获时，捕获列表中的第一个元素必须是 &#x3D; 或 &amp;，此符号指定了默认捕获的方式是值捕获或引用捕获。<br>需要注意的是:显式捕获的变量必须使用和默认捕获不同的方式捕获。例如:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> i = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> j = <span class="number">20</span>:</span><br><span class="line"><span class="keyword">auto</span> f1 = [ =, &amp;i] () ( <span class="keyword">return</span> j + i; );<span class="comment">//正确，默认值捕获，显式是引用捕获</span></span><br><span class="line"><span class="keyword">auto</span> f2 = [ =, i] () ( <span class="keyword">return</span> i + j; &#125;;<span class="comment">// 编译出错，默认值捕获，显式值捕获，冲突了</span></span><br><span class="line"><span class="keyword">auto</span> f3 = [ &amp;, &amp;<span class="built_in">il</span> () ( <span class="keyword">return</span> i +i; &#125;;<span class="comment">// 编译出错，默认引用捕获，显式引用捕获，冲突了</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="修改值捕获变量的值"><a href="#修改值捕获变量的值" class="headerlink" title="修改值捕获变量的值"></a>修改值捕获变量的值</h5><p>在lambda 函数中，如果以传值方式捕获变量，则函数体中不能修改该变量，否则会引发编译错误</p>
+<p>在lambda 函数中，如果希望修改值捕获变量的值，可以加 mutable 选项，但是，在lambda 函数的外部，变量的值不会被修改</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">123</span></span><br><span class="line"><span class="keyword">auto</span> f = [a]()<span class="keyword">mutable</span> &#123; cout &lt;&lt; ++a &lt;&lt; endl;&#125;; <span class="comment">// 不会报错</span></span><br><span class="line">cout &lt;&lt; a&lt;&lt; endl; <span class="comment">// 输出: 123</span></span><br><span class="line"><span class="built_in">f</span>();  <span class="comment">// 输出: 124</span></span><br><span class="line">cout &lt;&lt; a &lt;&lt; endl; <span class="comment">// 输出: 123</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="异常说明"><a href="#异常说明" class="headerlink" title="异常说明"></a>异常说明</h5><p>lambda 可以抛出异常，用throw(… )指示异常的类型，用 noexcept 指示不抛出任何异常.</p>
+<p><strong>当我们编写了一个lambda 函数之后，编译器将它翻译成一个类，该类中有一个重载了()的函数</strong></p>
+<h3 id="std-forward-list（单向链表）"><a href="#std-forward-list（单向链表）" class="headerlink" title="std::forward_list（单向链表）"></a>std::forward_list（单向链表）</h3><h3 id="右值引用和移动语义"><a href="#右值引用和移动语义" class="headerlink" title="右值引用和移动语义"></a>右值引用和移动语义</h3><h4 id="左值、右值"><a href="#左值、右值" class="headerlink" title="左值、右值"></a>左值、右值</h4><p>在C++中，所有的值不是左值，就是右值，左值是指表达式结束后依然存在的持久化对象，右值是指表达式结束后就不再存在的临时对象，有名字的对象都是左值，右值没有名字</p>
+<p>还有一个可以区分左值和右值的便捷方法: 看能不能对表达式取地址，如果能，则为左值，否则为右</p>
+<p>C++11 扩展了右值的概念，将右值分为了纯右值和将亡值,</p>
+<ul>
+<li>纯右值: a)非引用返回的临时变量，b) 运算表达式产生的结果，c) 字面常量 (C 风格字符串除外，它是地址)。</li>
+<li>将亡值: 与右值引用相关的表达式，例如: 将要被移动的对象、T&amp;&amp;函数返回的值std::move)的返回值、转换成T&amp;&amp;的类型的转换函数的返回值.</li>
+</ul>
+<p>C++98 中的引用很常见，就是给变量取个别名，在C++11 中，因为增加了右值引用(rvalue reference)的概念，所以C++98 中的引用都称为了左值引用(lvalue reference)。</p>
+<p>右值引用就是给右值取个名字</p>
+<p>语法: 数据类型&amp;&amp; 变量名&#x3D;右值</p>
+<h4 id="移动语义"><a href="#移动语义" class="headerlink" title="移动语义"></a>移动语义</h4><p>如果一个对象中有堆区资源，需要编写拷贝构造函数和赋值函数，实现深拷贝。<br>深贝把对象中的堆区资源复制了一份，如果源对象(被拷贝的对象)是临时对象，拷贝完就没什么用了，这样会造成没有意义的资源申请和释放操作。如果能够直接使用源对象拥有的资源，可以节省资源申请和释放的时间。C++11新增加的移动语义就能够做到这一点。<br>实现移动语义要增加两个函数:移动构造函数和移动赋值函数<br>移动构造函数的语法:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">类名(类名&amp;&amp; 源对象)&#123;......&#125;</span><br></pre></td></tr></table></figure>
+
+<p>移动赋值函数的语法</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">类名&amp; <span class="keyword">operator</span>=(类名&amp;&amp; 源对象)&#123;......&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>蛋挞一号
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://dandanking.github.io/post/ddd42d85.html" title="C++11特性">https://dandanking.github.io/post/ddd42d85.html</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C++</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/9ab2931e.html" rel="prev" title="计算机网络基础">
+                  <i class="fa fa-chevron-left"></i> 计算机网络基础
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/6e08d78f.html" rel="next" title="STL基础">
+                  STL基础 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蛋挞一号</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/dandanking" class="github-corner" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300,"hOffset":60,"vOffset":0},"mobile":{"show":true,"scale":0.5},"react":{"opacity":0.7,"opacityOnHover":0.2},"log":false});</script></body>
+</html>
